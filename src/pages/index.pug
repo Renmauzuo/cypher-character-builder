@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        title="Cypher Character Builder"
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="description" content="Tool for building Cypher characters.")
+        link(rel='stylesheet' type='text/css' href='styles/global.min.css')
+body
+    .container 
+        .form-row 
+            div
+                label(for='name') Name
+                input#name(type="text" name='name')
+            p.bottom-align is a(n)
+            div
+                label(for='descriptor') Descriptor:
+                select#descriptor(name='descriptor')
+            div
+                label(for='type') Type:
+                select#type(name='type')
+        p You have #[span#remaining-bonus] bonus points to spend.
+        br
+        .form-row
+            div
+                label(for='might-bonus') Bonus Might
+                input#might-bonus(type="number" name='might-bonus' step="1" value="0" min="0")
+            div
+                label(for='might-current') Current Might
+                input#might-current(type="number" name='might-current' step="1" min="0")
+            div
+                p Might Pool: 
+                p#might-pool
+        .form-row
+            div
+                label(for='speed-bonus') Bonus Speed
+                input#speed-bonus(type="number" name='speed-bonus' step="1" value="0" min="0")
+            div
+                label(for='speed-current') Current Speed
+                input#speed-current(type="number" name='speed-current' step="1" min="0")
+            div
+                p Speed Pool: 
+                p#speed-pool
+        .form-row
+            div
+                label(for='intellect-bonus') Bonus Intellect
+                input#intellect-bonus(type="number" name='intellect-bonus' step="1" value="0" min="0")
+            div
+                label(for='intellect-current') Current Intellect
+                input#intellect-current(type="number" name='intellect-current' step="1" min="0")
+            div
+                p Intellect Pool: 
+                p#intellect-pool
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+    script(src='scripts/data.min.js')
+    script(src='scripts/global.min.js')

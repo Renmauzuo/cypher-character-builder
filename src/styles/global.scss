@@ -1,0 +1,61 @@
+@mixin desktop () {
+    @media (min-width:1024px) {
+        @content;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+	max-width: 980px;
+	width: 90%;
+	margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+select,input {
+    margin-bottom: 1em;
+    min-width: 100px;
+    display: block;
+}
+
+input {
+    &[type='checkbox'] {
+        display: inline-block;
+        margin-right: .5em;
+        min-width: unset;
+        
+        & + label {
+            display: inline-block;
+        }
+    }
+}
+
+.form-row {
+    @include desktop {
+        display: flex;
+        column-gap: 1em;
+    }
+
+    p {
+        &.bottom-align {
+            @include desktop {
+                margin-top: 25px;
+            }
+        }
+
+        + p {
+            margin-top: 10px;
+        }
+    }
+}
+
+button {
+    margin-bottom: 1em;
+}
