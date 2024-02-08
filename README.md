@@ -1,7 +1,7 @@
-# Cypher Character Building
+# Cypher Character Builder
 Tool for building characters using the Cypher system
 
-View it [here](https://renmauzuo.github.io/cypher-character-building/)
+View it [here](https://renmauzuo.github.io/cypher-character-builder/)
 
 ## Requirements
 
