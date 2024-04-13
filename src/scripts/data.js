@@ -33,10 +33,35 @@ const descriptors = {
     appealing: {
         pool: {
             intellect: 2
-        }
+        },
+        skills: [
+            "Pleasant social interactions",
+            "Resisting any kind of seduction or persuasion if you wish it"
+        ]
     },
-    benficient: {},
-    brash: {
+    benificient: {
+        inabilities: [
+            "While you are alone, all Intellect and Speed tasks are hindered."
+        ],
+        skills: [
+            "All tasks related to pleasant social interaction, putting other people at ease, and gaining trust."
+        ],
+        traits: [
+            {
+                name: "Altruistic",
+                description: "If you’re standing next to a creature that takes damage, you can intercede and take 1 point of that damage yourself (reducing the damage inflicted on the creature by 1 point). If you have Armor, it does not provide a benefit when you use this ability"
+            },
+            {
+                name: "Helpful",
+                description: "Whenever you help another character, that character gains the benefit as if you were trained even if you are not trained or specialized in the attempted task."
+            },
+            {
+                name: "Generous",
+                description: "Allies who have spent the last day with you add +1 to their recovery rolls."
+            }
+        ]
+    },
+    /*brash: {
         pool: {
             speed: 2
         }
@@ -257,5 +282,5 @@ const descriptors = {
         pool: {
             intellect: 2
         }
-    },
+    },*/
 };
