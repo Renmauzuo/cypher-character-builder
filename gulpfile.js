@@ -9,6 +9,7 @@ const rollup = require('gulp-better-rollup');
 const rollupBabel = require('rollup-plugin-babel');
 const cachebust = require('gulp-cache-bust');
 
+const sass = require('sass');
 const $ = gulpLoadPlugins();
 
 const development = $.environments.development;
@@ -37,13 +38,15 @@ const cacheBusting = () =>
         .pipe(cachebust())
 		.pipe(gulp.dest('docs'));
 
+const gulpSass = $.sass(sass);
+
 const css = () =>
 	gulp.src('src/**/*.scss', { base: 'src' })
 		.pipe(development($.sourcemaps.init()))
-		.pipe($.sass({
+		.pipe(gulpSass({
 			indentType: 'space',
 			indentWidth: 2
-		}).on('error', $.sass.logError))
+		}).on('error', gulpSass.logError))
 		.pipe($.postcss([
 			postcssImport(),
 			postcssCombineSelectors({ removeDuplicatedProperties: true }),
